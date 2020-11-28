@@ -11,7 +11,7 @@
 <p align="center">
   <h3 align="center"> 
 
-   Watch Folders  :eyes: 
+   Watch and copy  :lollipop:
 
   </h3> 
   <p align="center">
