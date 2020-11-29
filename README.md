@@ -57,7 +57,11 @@ $ npm install
 ```
 $ cp .env-examples .env 
 ```
-Configure all the environment variables, with their information.
+####  Configure 
+
+* Folder List = /src/config/setup.json
+
+* Files Received = .env
 
 
 <br>
