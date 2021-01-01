@@ -1,4 +1,5 @@
 const { createLogger, format, transports } = require('winston');
+
 const { combine, timestamp, simple } = format;
 const { datetimeNow } = require('../utils/current');
 require('dotenv').config();
@@ -21,11 +22,10 @@ const logger = createLogger({
     new transports.File({
       filename: `${process.env.LOGS}/nfes_watch.log`,
       maxsize: '100mb',
-    })
-  ]
+    }),
+  ],
 });
 
-
 module.exports = {
-  logger
+  logger,
 };
