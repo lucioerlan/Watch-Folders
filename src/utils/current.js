@@ -16,5 +16,5 @@ const datetimeNow = () => {
 };
 
 module.exports = {
-  datetimeNow
+  datetimeNow,
 };
