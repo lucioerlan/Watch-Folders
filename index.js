@@ -1,13 +1,21 @@
+const ms = require('ms');
 const Obserser = require('./src/service/observer');
+const Remove = require('./src/helpers/remove-olds');
 const arr = require('./src/config/setup.json');
-const { logger } = require('./src/middlewares/logs');
-const removeOldFiles = require('./src/helpers/remove-olds');
-const obserser = new Obserser(); 
-const folders = arr.map((item) => item.Folder_Path);
 
-obserser.on('data', (log) => {
-  logger.info(log);
-  removeOldFiles();
-});
+const obserser = new Obserser();
+const remove = new Remove();
+const folders = arr.map(({ Folder_Path }) => Folder_Path);
 
-obserser.watchFolder(folders);
+const observerFc = (tm, func) =>
+  new Promise((resolve) => {
+    setTimeout(func, tm);
+  });
+
+const removeFc = (tm, func) =>
+  new Promise((resolve) => {
+    setInterval(func, tm);
+  });
+
+observerFc(ms('5s'), () => obserser.watchFolder(folders));
+removeFc(ms('1h'), () => remove.removeOldFiles());
