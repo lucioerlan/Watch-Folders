@@ -1,4 +1,4 @@
-const EventEmitter = require('events').EventEmitter;
+const { EventEmitter } = require('events');
 const path = require('path');
 const { copyFileSync } = require('fs-extra');
 const { watch } = require('chokidar');
@@ -16,14 +16,14 @@ class Observer extends EventEmitter {
       watch(folders).on('add', async (originFiles) => {
 
         if (originFiles.includes('.pdf')) {
-         this.emit('data', originFiles);
+          logger.info(`Observer - ${originFiles}`);
 
-         copyFileSync(
-          originFiles,
-          `${process.env.NEW_FILES}/${path.basename(originFiles)}`
-        );
+          copyFileSync(
+            originFiles,
+            `${process.env.NEW_FILES}/${path.basename(originFiles)}`
+          );
 
-      }});
+        }});
     } catch (err) {
       return logger.error(`Failed to observe files: ${err}`);
     }
