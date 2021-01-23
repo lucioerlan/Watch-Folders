@@ -18,7 +18,7 @@ class Remove extends EventEmitter {
         const stats = statSync(join(process.env.NEW_FILES, file));
         const now = new Date().getTime();
 
-        const endTime = new Date(stats.ctime).getTime() + ms('24h');
+        const endTime = new Date(stats.ctime).getTime() + ms('1m');
 
         if (now > endTime) {
           unlinkSync(join(process.env.NEW_FILES, file));
