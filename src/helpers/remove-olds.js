@@ -3,7 +3,6 @@ const { join } = require('path');
 const { EventEmitter } = require('events');
 const ms = require('ms');
 const { logger } = require('../middlewares/logs');
-require('dotenv').config();
 
 /**
  * Delete files that are longer than 1 minute
@@ -14,7 +13,8 @@ class Remove extends EventEmitter {
   async removeOldFiles() {
     try {
       const files = readdirSync(process.env.NEW_FILES);
-      files.forEach((file) => {
+      files.forEach(file => {
+       
         const stats = statSync(join(process.env.NEW_FILES, file));
         const now = new Date().getTime();
 
@@ -23,11 +23,10 @@ class Remove extends EventEmitter {
         if (now > endTime) {
           unlinkSync(join(process.env.NEW_FILES, file));
           logger.info(`Remove - ${file}`);
-        }
+        }});
 
-      });
     } catch (err) {
-      return logger.error(`Delete Old Files failed: ${err}`);
+       logger.error(err.message);
     }
   }
 }
