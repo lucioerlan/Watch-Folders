@@ -1,18 +1,10 @@
 [
   {
     "Name": "Electronics",
-    "Folder_Path": "/home/erlanrox/FILES/Electronics"
+    "Folder_Path": "/home/erlanrox/Documents/Eletronics"
   },
   {
-    "Name": "Toys",
-    "Folder_Path": "/home/erlanrox/FILES/Toys"
-  },
-  {
-    "Name": "Computing",
-    "Folder_Path": "/home/erlanrox/FILES/Computing"
-  },
-  {
-    "Name": "Fashion",
-    "Folder_Path": "/home/erlanrox/FILES/Fashion"
+    "Name": "Games",
+    "Folder_Path": "/home/erlanrox/Documents/Games"
   }
 ]
