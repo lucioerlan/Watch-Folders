@@ -21,7 +21,9 @@ const logger = createLogger({
     }),
     new transports.File({
       filename: `${process.env.LOGS}/nfes_watch.log`,
-      maxsize: '100mb',
+      maxSize: '50m',
+      maxFiles: '20d',
+      eol: '\r\n'
     }),
   ],
 });
