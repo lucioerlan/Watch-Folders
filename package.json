@@ -5,8 +5,8 @@
   "issues": "https://github.com/lucioerlan/watch-folders/issues",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "lint": "eslint --fix --ext .js,.jsx .",
     "test": "jest"
   },
