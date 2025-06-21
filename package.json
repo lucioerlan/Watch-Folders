@@ -14,7 +14,7 @@
     "chokidar": "^3.4.3",
     "dotenv": "^8.2.0",
     "fs-extra": "^9.0.1",
-    "moment-timezone": "^0.5.32",
+    "moment-timezone": "^0.6.0",
     "ms": "^2.1.2",
     "winston": "^3.3.3"
   },
